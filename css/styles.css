@@ -1,0 +1,78 @@
+/* CSS information for the website */
+
+body {
+    background-color: gray;
+}
+
+footer {
+    text-align: center; 
+    width: 100%;
+    margin-top: 50px
+}
+
+.top-bar {
+    border: 3px solid black;
+    border-radius: 10px; 
+    color: white; 
+    background-color: #c0c0c0; 
+    text-align: center;
+}
+
+/* CSS information exclusive to the "Index" page */
+
+.links {
+    border: 3px solid black; 
+    border-radius: 10px; 
+    background-color: silver;
+}
+
+.student-links {
+    color: white;
+}
+
+.other-students {
+    margin: 150px;
+    color: white;
+}
+
+.info-links {
+    color: white;
+}
+
+.portrait {
+    text-align: center; 
+    margin: 25px;
+    border: 2px solid black;
+    border-radius: 10%;
+    width: 50%;
+    margin-top: 75px;
+}
+
+/* CSS information exclusive to the "About Me" page */
+
+.web-dev {
+    margin: 10px;
+    float: left;
+    width: 46%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: silver;
+}
+
+.fun-facts {
+    margin: 10px;
+    float: right;
+    width: 46%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: silver;
+}
+
+.column-headings {
+    text-align: center;
+    margin: 30px;
+}
+
+.back-link {
+    color: white;
+}
