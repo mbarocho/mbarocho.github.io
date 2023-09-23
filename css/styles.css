@@ -10,21 +10,72 @@ footer {
     margin-top: 50px
 }
 
+/* CSS information for toolbar */
+
 .top-bar {
     border: 3px solid black;
     border-radius: 10px; 
-    color: white; 
-    background-color: #c0c0c0; 
+    color: white;
+    background-color: #c0c0c0;
+}
+
+.name {
+    text-align: left;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .nav-menu {
+    background-color: #afafaf;
+}
+
+.nav-menu {
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    scale:75%;
+}
+
+.button {
+    border: none;
+    /*color: #000000;*/
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
 }
 
 /* CSS information exclusive to the "Index" page */
-
-.links {
-    border: 3px solid black; 
-    border-radius: 10px; 
-    background-color: silver;
-}
 
 .student-links {
     color: white;
