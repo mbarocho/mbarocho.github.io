@@ -17,22 +17,35 @@ footer {
     border-radius: 10px; 
     color: white;
     background-color: #c0c0c0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .name {
     text-align: left;
+    float: left;
+    padding-left: 20px;
 }
 
 .dropdown {
-    display: inline-block;
+    text-align: right;
+    float: right;
 }
 
 .dropdown-content {
     display: none;
-    position: relative;
+    position: absolute;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #d4caca;
     z-index: 1;
+    overflow: visible;
+    top: 100;
+    right: 0;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 .dropdown-content a {
@@ -40,10 +53,13 @@ footer {
     padding: 12px 15px;
     text-decoration: none;
     display: block;
+    border-radius: 10px;
   }
   
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #06ab00;
+    color: #aaaaaa;
+    transition: all 0.5s ease-out;
 }
 
 .dropdown:hover .dropdown-content {
@@ -61,7 +77,7 @@ footer {
     font-size: 16px;
     cursor: pointer;
     background: none;
-    scale:75%;
+    scale:50%;
 }
 
 .button {
@@ -76,19 +92,6 @@ footer {
 }
 
 /* CSS information exclusive to the "Index" page */
-
-.student-links {
-    color: white;
-}
-
-.other-students {
-    margin: 150px;
-    color: white;
-}
-
-.info-links {
-    color: white;
-}
 
 .portrait {
     text-align: center; 
