@@ -122,3 +122,8 @@ footer {
 .back-link {
     color: white;
 }
+
+/* CSS information exclusive to the "Contact Form" page */
+.contact-form {
+    padding-top: 100px;
+}
