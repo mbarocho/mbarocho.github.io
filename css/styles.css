@@ -124,6 +124,6 @@ footer {
 }
 
 /* CSS information exclusive to the "Contact Form" page */
-.contact-form {
+#contact-form {
     padding-top: 100px;
 }
