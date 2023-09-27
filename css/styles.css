@@ -1,7 +1,8 @@
 /* CSS information for the website */
 
 body {
-    background-color: gray;
+    background-image: url("slytherin.png");
+    background-color: #1a472a;
 }
 
 footer {
@@ -13,20 +14,22 @@ footer {
 /* CSS information for toolbar */
 
 .top-bar {
-    border: 3px solid black;
+    /*
+    border: 3px solid white;
+    */
     border-radius: 10px; 
     color: white;
-    background-color: #c0c0c0;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
 .name {
     text-align: left;
     float: left;
-    padding-left: 20px;
+    padding-left: 15px;
+    font-size: 20px;
 }
 
 .dropdown {
@@ -37,10 +40,10 @@ footer {
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 160px;
+    /*min-width: 160px;*/
+    background-color: #aaaaaa;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background-color: #d4caca;
-    z-index: 1;
+    /*z-index: 1;*/
     overflow: visible;
     top: 100;
     right: 0;
@@ -57,8 +60,8 @@ footer {
   }
   
 .dropdown-content a:hover {
-    background-color: #06ab00;
-    color: #aaaaaa;
+    background-color: #2a623d;
+    color: white;
     transition: all 0.5s ease-out;
 }
 
@@ -66,9 +69,11 @@ footer {
     display: block;
 }
 
+/*
 .dropdown:hover .nav-menu {
     background-color: #afafaf;
 }
+*/
 
 .nav-menu {
     border: none;
@@ -95,11 +100,11 @@ footer {
 
 .portrait {
     text-align: center; 
-    margin: 25px;
-    border: 2px solid black;
-    border-radius: 10%;
-    width: 50%;
-    margin-top: 75px;
+    margin: 5px;
+    border: 2px solid #5d5d5d;
+    border-radius: 5%;
+    width: 25%;
+    margin-top: 25px;
 }
 
 /* CSS information exclusive to the "About Me" page */

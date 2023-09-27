@@ -5,45 +5,40 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<title style="text-align: center;">Contact Me!</title>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function() {
-                // https://dashboard.emailjs.com/admin/account
-                emailjs.init('toN7vFxzeanQU3SW5');
-            })();
-        </script>
-        <script>
-            window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-        </script>
     </head>
 
     <body>
-        <div class="container" style="text-align: center;">
+        <div class="top-bar">
+            <!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
+			<div class="name">
+				<h1 style="text-align: center">Contact Form</h1>
+			</div>
+			<div class="dropdown">
+				<button class="nav-menu"><img src="menu-icon.png"/></button>
+				<div class="dropdown-content">
+					<a href="https://dhp2616.github.io/-/"><button class="button">Previous Student</button></a>
+					<a href="https://teric622.github.io/"><button class="button">Next Student</button></a>
+					<a href="https://mattm401.github.io/"><button class="button">Class Website</button></a>
+					<a href="https://mbarocho.github.io"><button class="button">Home</button></a>
+					<a href="https://mbarocho.github.io/aboutMe.html"><button class="button">About Me</button></a>
+					<a href="https://mbarocho.github.io/contact.html"><button class="button">Contact Form (UNDER CONSTRUCTION)</button></a>
+				</div>
+			</div>
+        </div>
+        <div class="container" style="text-align: center; margin: 10px;">
             <form action="action_page.php">
-        
-                <label for="user_lname">Last Name</label>
-                <input type="text" id="user_lname" name="lastname" placeholder="Your last name..">
           
                 <label for="user_fname">First Name</label>
-                <input type="text" id="user_fname" name="firstname" placeholder="Your first name..">
+                <input type="text" id="user_fname" name="firstname" placeholder="Your first name.."><br>
+
+                <label for="user_lname">Last Name</label>
+                <input type="text" id="user_lname" name="lastname" placeholder="Your last name.."><br>
         
                 <label for="user_email">E-Mail</label>
-                <input type="user_email" id="lname" name="lastname" placeholder="Your e-mail address..">
+                <input type="user_email" id="lname" name="lastname" placeholder="Your e-mail address.."><br>
         
                 <label for="user_phone">Phone Number</label>
-                <input type="text" id="user_phone" name="lastname" placeholder="Your phone number..">
+                <input type="text" id="user_phone" name="lastname" placeholder="Your phone number.."><br>
         
                 <label for="user_message">Subject</label>
                 <textarea id="" name="user-message" placeholder="Write something.." style="height:200px"></textarea><br>
