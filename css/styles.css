@@ -1,8 +1,13 @@
 /* CSS information for the website */
 
 body {
-    background-image: url("slytherin.png");
+    background-image: url("../slytherin.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #1a472a;
+    background-attachment: fixed;
+    backdrop-filter: blur 10px;
 }
 
 footer {
@@ -14,75 +19,45 @@ footer {
 /* CSS information for toolbar */
 
 .top-bar {
-    /*
-    border: 3px solid white;
-    */
-    border-radius: 10px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     color: white;
-    background-color: black;
+    background-color: #aaaaaa;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .name {
     text-align: left;
     float: left;
-    padding-left: 15px;
+    padding-left: 25px;
     font-size: 20px;
 }
 
-.dropdown {
-    text-align: right;
-    float: right;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    /*min-width: 160px;*/
-    background-color: #aaaaaa;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /*z-index: 1;*/
-    overflow: visible;
-    top: 100;
-    right: 0;
-    margin-right: 10px;
+.nav-buttons {
+    color: white;
     border-radius: 10px;
+    display: flex;
+    padding-right: 25px;
+    font-size: 20px;
 }
 
-.dropdown-content a {
-    color: black;
+.nav-buttons a {
     padding: 12px 15px;
     text-decoration: none;
     display: block;
     border-radius: 10px;
   }
   
-.dropdown-content a:hover {
+.nav-buttons a:hover {
     background-color: #2a623d;
-    color: white;
     transition: all 0.5s ease-out;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/*
-.dropdown:hover .nav-menu {
-    background-color: #afafaf;
-}
-*/
-
-.nav-menu {
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    background: none;
-    scale:50%;
 }
 
 .button {
@@ -104,7 +79,7 @@ footer {
     border: 2px solid #5d5d5d;
     border-radius: 5%;
     width: 25%;
-    margin-top: 25px;
+    margin-top: 100px;
 }
 
 /* CSS information exclusive to the "About Me" page */
