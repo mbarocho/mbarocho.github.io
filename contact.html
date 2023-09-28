@@ -9,30 +9,30 @@
 
     <body>
         <div class="background">
-			<div class="blur"></div>
-		</div>
-        
-        <div class="top-bar">
-            <!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
-            <div class="name">
-                <h1 style="text-align: center">Contact Form</h1>
-            </div>
-            <div class="nav-buttons">
-                <a href="https://dhp2616.github.io/-/"><button class="button">Previous Student</button></a>
-                <a href="https://teric622.github.io/"><button class="button">Next Student</button></a>
-                <a href="https://mattm401.github.io/"><button class="button">Class Website</button></a>
-                <a href="https://mbarocho.github.io"><button class="button">Home</button></a>
-                <a href="https://mbarocho.github.io/aboutMe.html"><button class="button">About Me</button></a>
-                <a href="contact.html"><button class="button">Contact Form (UNDER CONSTRUCTION)</button></a>
+			<div class="blur">
+                <div class="top-bar">
+                    <!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
+                    <div class="name">
+                        <h1 style="text-align: center">Contact Form</h1>
+                    </div>
+                    <div class="nav-buttons">
+                        <a href="https://dhp2616.github.io/-/"><button class="button">Previous Student</button></a>
+                        <a href="https://teric622.github.io/"><button class="button">Next Student</button></a>
+                        <a href="https://mattm401.github.io/"><button class="button">Class Website</button></a>
+                        <a href="https://mbarocho.github.io"><button class="button">Home</button></a>
+                        <a href="https://mbarocho.github.io/aboutMe.html"><button class="button">About Me</button></a>
+                        <a href="contact.html"><button class="button">Contact Form (UNDER CONSTRUCTION)</button></a>
+                    </div>
+                </div>
+                <form id="contact-form">
+                    <input type="text" id="user_fname" class="form-data" name="firstname" placeholder="Your first name.."><br>
+                    <input type="text" id="user_lname" class="form-data" name="lastname" placeholder="Your last name.."><br>
+                    <input type="email" id="user_email" class="form-data" name="user_email" placeholder="Your e-mail address.."><br>
+                    <input type="text" id="user_phone" class="form-data" name="user_phone" placeholder="(123) 456-7890"><br>
+                    <input type="text" id="user-message" class="form-data" name="user-message" placeholder="Write something.." style="height:200px"></textarea><br>
+                    <input type="submit" value="Submit" class="submit" style="margin-top: 10px;">
+                </form>
             </div>
         </div>
-        <form id="contact-form">
-            <input type="text" id="user_fname" name="firstname" placeholder="Your first name.."><br>
-            <input type="text" id="user_lname" name="lastname" placeholder="Your last name.."><br>
-            <input type="email" id="user_email" name="user_email" placeholder="Your e-mail address.."><br>
-            <input type="text" id="user_phone" name="user_phone" placeholder="(123) 456-7890"><br>
-            <textarea id="user-message" name="user-message" placeholder="Write something.." style="height:200px"></textarea><br>
-            <input type="submit" value="Submit" style="margin-top: 10px;">
-        </form>
     </body>
 </html>
