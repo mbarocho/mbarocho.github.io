@@ -98,6 +98,7 @@ footer {
 
 .web-dev {
     margin: 10px;
+    padding-top: 100px;
     float: left;
     width: 46%;
     border: 2px solid black;
@@ -107,6 +108,7 @@ footer {
 
 .fun-facts {
     margin: 10px;
+    padding-top: 100px;
     float: right;
     width: 46%;
     border: 2px solid black;
@@ -119,11 +121,8 @@ footer {
     margin: 30px;
 }
 
-.back-link {
-    color: white;
-}
-
 /* CSS information exclusive to the "Contact Form" page */
 #contact-form {
     padding-top: 100px;
+    text-align: center;
 }
