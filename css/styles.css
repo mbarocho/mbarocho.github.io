@@ -123,6 +123,5 @@ footer {
 
 /* CSS information exclusive to the "Contact Form" page */
 #contact-form {
-    padding-top: 100px;
-    text-align: center;
+    padding-top: 10px;
 }
