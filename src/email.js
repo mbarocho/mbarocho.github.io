@@ -16,8 +16,13 @@ document.head.appendChild(script);
 window.onload = function() {
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        const formElement = document.getElementById("contact-form");
-        emailjs.sendForm("contact-service", "template_prime", formElement)
+        //const formElement = document.getElementById("contact-form");
+
+        var formDetails = {
+            name: 'James',
+            notes: 'Check this out!'
+        };
+        emailjs.sendForm("contact-service", "template_prime", formDetails)
             .then(function() {
                 console.log("SUCCESS!");
                 console.log("Form element:", document.getElementById("contact-form"));
