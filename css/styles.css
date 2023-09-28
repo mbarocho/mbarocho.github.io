@@ -32,7 +32,7 @@ footer {
 
 .top-bar {
     color: white;
-    background-color: #aaaaaa;
+    background-image: linear-gradient(to right,#aaaaaa,#eeeeee);
     display: flex;
     align-items: center;
     width: 100%;
@@ -52,11 +52,11 @@ footer {
 }
 
 .nav-buttons {
-    color: white;
     border-radius: 10px;
     display: flex;
     padding-right: 25px;
     font-size: 20px;
+    color: white;
 }
 
 .nav-buttons a {
@@ -67,14 +67,14 @@ footer {
   }
   
 .nav-buttons a:hover {
-    background-color: #2a623d;
     height: 100%;
     transition: all 0.5s ease-out;
+    background-color: #2a623d;
+    color: white;
 }
 
 .button {
     border: none;
-    /*color: #000000;*/
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -86,34 +86,33 @@ footer {
 /* CSS information exclusive to the "Index" page */
 
 .portrait {
-    text-align: center; 
-    margin: 5px;
-    border: 2px solid #5d5d5d;
+    border: 2px solid #aaaaaa;
     border-radius: 5%;
-    width: 10%;
-    margin-top: 100px;
+    width: 15%;
+    margin: 150px auto;
+    text-align: center;
 }
+
+
 
 /* CSS information exclusive to the "About Me" page */
 
 .web-dev {
-    margin: 10px;
-    padding-top: 100px;
+    padding-top: 150px;
     float: left;
     width: 46%;
     border: 2px solid black;
     border-radius: 10px;
-    background-color: silver;
+    background-color:rgba(100, 100, 100, 0.5)
 }
 
 .fun-facts {
-    margin: 10px;
-    padding-top: 100px;
+    padding-top: 150px;
     float: right;
-    width: 46%;
+    width: 48%;
     border: 2px solid black;
     border-radius: 10px;
-    background-color: silver;
+    background-color:rgba(100, 100, 100, 0.5)
 }
 
 .column-headings {
@@ -125,16 +124,20 @@ footer {
 #contact-form {
     padding-top: 150px;
     text-align: center;
-    background-color:rgba(0, 0, 0, 0)
-    
+    background-color:rgba(0, 0, 0, 0) 
 }
 
 .form-data {
-    color: #aaaaaa;
     background: none;
     margin: 10px;
+    background-color:rgba(100, 100, 100, 0.5);
+    color: #aaaaaa;
 }
 
 .submit {
-    background: none;
+    text-align: center;
+    color: #aaaaaa;
+    background-color:rgba(100, 100, 100, 0.5);
+    border-radius: 10px;
+    font-size: px;
 }
