@@ -20,7 +20,7 @@ window.onload = function() {
         var fullName = firstName.value + ' ' + lastName.value;
 
         var formDetails = {
-            sender: fullName.value,
+            name: fullName.value,
             email: emailAddress.value,
             phone: phoneNumber.value,
             message: mailInput.value
