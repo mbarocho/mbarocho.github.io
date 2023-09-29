@@ -17,11 +17,10 @@ window.onload = function() {
         var phoneNumber = document.getElementById("user_phone");
         var mailInput = document.getElementById("user_message");
 
+        var fullName = firstNameInput.value + ' ' + lastNameInput.value;
+
         var formDetails = {
-            name: {
-                given: firstName.value,
-                surname: lastName.value,
-            },
+            sender: fillName.value,
             email: emailAddress.value,
             phone: phoneNumber.value,
             message: mailInput.value
