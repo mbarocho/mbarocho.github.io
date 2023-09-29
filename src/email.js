@@ -27,7 +27,7 @@ window.onload = function() {
             message: mailInput.value
         };
 
-        emailjs.sendForm("contact-service", "template_prime", formDetails)
+        emailjs.send("contact-service", "template_prime", formDetails)
             .then(function() {
                 console.log("SUCCESS!");
                 console.log("Form element:", document.getElementById("contact-form"));
