@@ -5,23 +5,28 @@ script.onload = function() {
   emailjs.init("toN7vFxzeanQU3SW5");
 };
 
-/*
-(function() {
-    emailjs.init("toN7vFxzeanQU3SW5");
-})();
-*/
-
 document.head.appendChild(script);
 
 window.onload = function() {
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        //const formElement = document.getElementById("contact-form");
+
+        var firstName = document.getElementById("user_fname");
+        var lastName = document.getElementById("user_lname");
+        var emailAddress = document.getElementById("user_email");
+        var phoneNumber = document.getElementById("user_phone");
+        var mailInput = document.getElementById("user_message");
 
         var formDetails = {
-            name: 'James',
-            notes: 'Check this out!'
+            name: {
+                given: firstName.value,
+                surname: lastName.value,
+            },
+            email: emailAddress.value,
+            phone: phoneNumber.value,
+            message: mailInput.value
         };
+
         emailjs.sendForm("contact-service", "template_prime", formDetails)
             .then(function() {
                 console.log("SUCCESS!");
