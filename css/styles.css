@@ -4,6 +4,7 @@ body {
     background-color: #1a472a;
     margin: 0;
     padding: 0;
+    font-family: Georgia, serif;
 }
 
 footer {
@@ -59,20 +60,6 @@ footer {
     color: white;
 }
 
-.nav-buttons a {
-    padding: 12px 15px;
-    text-decoration: none;
-    display: block;
-    border-radius: 10px;
-  }
-  
-.nav-buttons a:hover {
-    height: 100%;
-    transition: all 0.5s ease-out;
-    background-color: #2a623d;
-    color: white;
-}
-
 .button {
     border: none;
     text-align: center;
@@ -81,6 +68,17 @@ footer {
     font-size: 16px;
     cursor: pointer;
     background: none;
+    margin: 10px;
+    color: black;
+    padding: 10px 20px;
+}
+
+.button:hover {
+    height: 100%;
+    transition: all 0.5s ease-out;
+    background-color: #2a623d;
+    color: white;
+    border-radius: 10px;
 }
 
 /* CSS information exclusive to the "Index" page */
