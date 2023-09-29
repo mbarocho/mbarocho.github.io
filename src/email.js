@@ -17,7 +17,7 @@ window.onload = function() {
         var phoneNumber = document.getElementById("user_phone");
         var mailInput = document.getElementById("user_message");
 
-        var fullName = firstNameInput.value + ' ' + lastNameInput.value;
+        var fullName = firstName.value + ' ' + lastName.value;
 
         var formDetails = {
             sender: fillName.value,
