@@ -4,41 +4,173 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<title style="text-align: center;">Michael Arocho</title>
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+		<script src="src/homePage.js"></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQG41LVGM1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-HQG41LVGM1');
+		</script>
 	</head>
 
-	<body>
-		<div class="background">
-			<div class="blur">
-			<!--Information for the Info Bar-->
-				<div class="top-bar">
-					<!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
-					<div class="name">
-						<h1 style="text-align: center">Michael Arocho</h1>
-					</div>
-					<div class="nav-buttons">
-						<!--<a href="https://mbarocho.github.io"><button class="button">Home</button></a>-->
-						<a href="https://mbarocho.github.io" class="button">Home</a>
-						<a href="https://mbarocho.github.io/aboutMe.html" class="button">About Me</a>
-						<a href="https://mbarocho.github.io/contact.html" class="button">Contact Form</a>
-						<div class="dropdown">
-							<button class="drop-menu" style="font-family: Georgia, serif;">Class Links</button>
-							<div class="class-info">
-								<a href="https://mattm401.github.io/" class="button">Class Website</a>
-								<a href="https://dhp2616.github.io/-/" class="button">Previous Student</a>
-								<a href="https://teric622.github.io/" class="button">Next Student</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div style="text-align: center;">
-					<img class = "portrait" src="./Me.jpg" alt="Myself">
-				</div>
+	<body class="dark-mode">
+		<div id="loading">
+			<div class="loading-page">
+				<p class="loading-word">Accessing...</p>
+				<div class="loading-bar"></div>
 			</div>
 		</div>
-		<footer>
+			
+		<!--Information for the Info Bar-->
+		<div class="top-bar">
+			<!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
+			<div class="nav-buttons">
+				<a href="#home" class="button">Home</a>
+				<a href="#about" class="button">About Me</a>
+				<a href="#projects" class="drop-menu button">Projects</a>
+				<a href="files/Resume.pdf" class="button">Resume</a>
+				<button class="button" style="font-family: 'Courier New', Courier, monospace;" onclick="openForm()">Contact Me!</button>
+				<div class="dropdown">
+					<a class="drop-menu">Class Links</a>
+					<div class="class-info">
+						<a href="https://mattm401.github.io/" class="button">Class Website</a>
+						<a href="https://dhp2616.github.io/-/" class="button">Previous Student</a>
+						<a href="https://teric622.github.io/" class="button">Next Student</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+		<div class="name" id="home">
+			<img src="images/nametag.png" alt="Michael Arocho" class="nametag">
+			<p>Amateur Software Developer. Professional Nerd.</p>
+		</div>
+
+		<!--
+		<div style="text-align: center;">
+			<img class = "portrait" src="./Me.jpg" alt="Myself">
+		</div>
+	</div>
+	-->
+		<div id="about">
+			<div class="info-card">
+				<img src="images/NYC.jpg" alt="New York City">
+				<h1 class="abt">About Me</h1>
+				<div class="info">
+					<p>Born in 2001 in the heart of New York City before moving to Delaware at a very young age.</p>
+					<div class="experience">
+						<h3>Fun Facts About Me:</h3>
+						<ul>
+							<li>Most of my code is fueled by flavored caffeine.</li>
+							<li>I've worked in the IT field for a little over 2 years.</li>
+							<li>I have a lightsaber collection.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="info-card">
+				<img src="images/UD.jpeg" alt="University of Delaware">
+				<h1 class="abt">My Journey</h1>
+				<div class="info">
+					<p>I'm currently working towards a degree in Computer Science at the University of Delaware.</p>
+					<div class="experience">
+						<h3>Past Experience:</h3>
+						<ul>
+							<li>IT Troubleshooting Technician</li>
+							<li>Research Assistant</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-card">
+				<img src="images/Alien_After.jpg" alt="Alien 3D Model">
+				<h1 class="abt">My Destination</h1>
+				<p class="info">
+					Nothing inspires me more than video games. The idea of a blank canvas that can be filled 
+					with such intricate details and life...that is the height of creativity in technology.
+					My ultimate dream is to create a fictional world of my own, one that can be enjoyed by fans
+					of all ages and from all walks of life.
+				</p>
+			</div>
+
+		</div>
+
+		<h2 class="project-label" id="projects">My Projects</h2>
+		<div class="project-container">
+			<div class="project">
+				<a href="files/cmd-center.zip">
+					<img class="thumbnail" src="images/twitch.png" alt="Background">
+					<h1 class="abt-project">Command Center</h1>
+					<p class="info-project">
+						A sci-fi-themed overlay pack for Twitch.<br>
+						<br>
+						Created using Photopea.
+					</p>
+				</a>
+			</div>
+			<div class="project">
+				<a href="https://www.youtube.com/@BosssBard">
+					<img class="thumbnail" src="images/bard.png" alt="Logo">
+					<h1 class="abt-project" style="color: black;">Boss's Bard</h1>
+					<p class="info-project" style="color: black;">
+						A YouTube channel that covers movie and video game music.<br>
+						<br>
+						Tracks made in FL Studio.
+
+					</p>
+				</a>
+			</div>
+			<div class="project">
+				<a href="https://sensifylab.cis.udel.edu/index.html">
+					<img class="thumbnail" src="images/unity.jpg" alt="Logo">
+					<h1 class="abt-project">Virtual Auditorium</h1>
+					<p class="info-project">
+						A Unity-based server for the University of Delaware.<br>
+						<br>
+						Programmed using C#.
+					</p>
+				</a>
+			</div>
+			<div class="project">
+				<a href="https://kroth353.github.io/TermProjectCisc474/">
+					<img class="thumbnail" src="images/project.png" alt="Logo">
+					<h1 class="abt-project" style="color: black;">Memory Games</h1>
+					<p class="info-project" style="color: black; top: 50%;">
+						A group-based term project for my Advanced Web Technologies class.<br>
+						<br>
+						Programmed using HTML, CSS, & JavaScript.<br>
+						<br>
+						Team Members: Kayla Roth, Jason Hensley, Reggie Jet Puebla, Rohan Yarlagladda
+					</p>
+				</a>
+			</div>
+		</div>
+
+		<div class="pop-up" id="contact">
+			<form id="contact-form" class="form-container">
+				<input type="text" id="user_fname" class="form-data" name="firstname" placeholder="Your first name.."><br>
+				<input type="text" id="user_lname" class="form-data" name="lastname" placeholder="Your last name.."><br>
+				<input type="email" id="user_email" class="form-data" name="user_email" placeholder="Your e-mail address.."><br>
+				<input type="text" id="user_phone" class="form-data" name="user_phone" placeholder="(123) 456-7890"><br>
+				<input type="text" id="user_message" class="form-data" name="user-message" placeholder="Write something.." style="height:200px"><br>
+				<input type="submit" value="Send" class="submit" style="margin-top: 10px;">
+				<button type="button" class="cancel" onclick="closeForm()">Close</button>
+			</form>
+		</div>
+
+		<footer class="footer">
 			<div class="icons">
-				<a href="https://github.com/mbarocho">GitHub</a>
-				<a href="www.linkedin.com/in/michaelbrandon-arocho-220861195">LinkedIn</a>
+				<a href="https://github.com/mbarocho" class="icon"><img src="icons/github-white.png" alt="GitHub Page"></a>
+				<a href="https://linkedin.com/in/michaelbrandon-arocho-220861195" class="icon"><img src="icons/linkedin-white.png" alt="LinkedIn"></a>
 			</div>
 		</footer>
 	</body>

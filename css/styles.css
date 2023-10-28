@@ -1,16 +1,36 @@
 /* CSS information for the website */
 
+html {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /*background: transparent; */
+}
+
+* {
+    box-sizing: border-box;
+  }
+
 body {
-    background-color: #1a472a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
     margin: 0;
     padding: 0;
-    font-family: Georgia, serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 footer {
+    margin-top: auto;
     text-align: center; 
     width: 100%;
-    margin-top: 50px
+    bottom: 0px;
 }
 
 .background {
@@ -18,7 +38,8 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-image: url("../slytherin.png");
+    /*background-image: url("../images/slytherin.png");*/
+    background-color: black;
     opacity: 75%;
 }
 
@@ -28,32 +49,84 @@ footer {
     width: 100%;
 }
 
+/* CSS information for the preloader */
+
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: all 0.5s ease-out;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+}
+.loading-word {
+    color: white;
+    text-align: center;
+}
+
+.loading-bar {
+    height: 30px;
+    background-color: white;
+    border-radius: 25px;
+}
 
 /* CSS information for toolbar */
 
 .top-bar {
-    color: white;
-    background-image: linear-gradient(to right,#aaaaaa,#eeeeee);
-    display: flex;
     align-items: center;
     width: 100%;
-    position: fixed;
+    position: sticky;
     justify-content: space-between;
     top: 0;
     left: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     height: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .75));
 }
 
 .name {
-    text-align: left;
-    float: left;
-    padding-left: 25px;
-    font-size: 20px;
+    scroll-margin-top: 6rem;
+    text-align: center;
+    /*padding-top: 20px;*/
+    /*float: left;*/
+    color: white;
+    text-shadow:
+        /* White */
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+
+        /* Purple */
+        0 0 42px #D875FF,
+        0 0 82px #D875FF,
+        0 0 92px #D875FF,
+        0 0 102px #D875FF,
+        0 0 151px #D875FF;
+}
+
+.name p {
+    font-size: 36px;
 }
 
 .nav-buttons {
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     padding-right: 25px;
     font-size: 20px;
@@ -69,16 +142,28 @@ footer {
     cursor: pointer;
     background: none;
     margin: 10px;
-    color: black;
-    padding: 10px 20px;
+    color: white;
+    padding: 10px 10px;
+    transition: all 0.5s ease-in;
 }
 
 .button:hover {
     height: 100%;
     transition: all 0.5s ease-out;
-    background-color: #2a623d;
-    color: white;
-    border-radius: 10px;
+    background-color: #D875FF;
+    border-radius: 5px;
+    box-shadow:
+        /* Light Purple */
+        0 0 7px #D875FF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+
+        /* Dark Purple */
+        0 0 42px #BC13FE,
+        0 0 82px #BC13FE,
+        0 0 92px #BC13FE,
+        0 0 102px #BC13FE,
+        0 0 151px #BC13FE;
 }
 
 .drop-menu {
@@ -91,19 +176,29 @@ footer {
     cursor: pointer;
     background: none;
     margin: 10px;
-    color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .drop-menu:hover {
-    height: 100%;
     transition: all 0.5s ease-out;
-    background-color: #2a623d;
-    color: white;
-    border-radius: 10px;
+    background-color: #D875FF;
+    border-radius: 5px;
+    box-shadow:
+        /* Light Purple */
+        0 0 7px #D875FF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+
+        /* Dark Purple */
+        0 0 42px #BC13FE,
+        0 0 82px #BC13FE,
+        0 0 92px #BC13FE,
+        0 0 102px #BC13FE,
+        0 0 151px #BC13FE;
 }
 
 .class-info {
-    background-color: #eeeeee;
     display: none;
     position: absolute;
     min-width: 160px;
@@ -111,10 +206,14 @@ footer {
     z-index: 1;
     top: 100%;
     left: 0;
+    transition: all 0.5s ease-in;
+    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, .75));
+    border-radius: 5px;
+    
 }
 
 .class-info a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -123,34 +222,182 @@ footer {
 .dropdown {
     position: relative;
     display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 0.5s ease-out;
   }
 
 .drop-menu:hover .dropdown:hover .class-info a:hover {
-    background-color: #2a623d;
+    background-color: #D875FF;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow:
+        /* Light Purple */
+        0 0 7px #D875FF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+
+        /* Dark Purple */
+        0 0 42px #BC13FE,
+        0 0 82px #BC13FE,
+        0 0 92px #BC13FE,
+        0 0 102px #BC13FE,
+        0 0 151px #BC13FE;
+    transition: all 0.5s ease-out;
 }
 
 .dropdown:hover .class-info {
     display: block;
+    transition: all 0.5s ease-out;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #2a623d;
+    background-color: #D875FF;
 }
 
+.button.active {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff;
+}
+
+/* CSS information for the Footer */
+
+.icon {
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.icon:hover {
+    background-color: transparent;
+    text-shadow:
+        /* White */
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+
+        /* Purple */
+        0 0 42px #D875FF,
+        0 0 82px #D875FF,
+        0 0 92px #D875FF,
+        0 0 102px #D875FF,
+        0 0 151px #D875FF;
+
+    transition: all 0.5s ease-out;
+}
 
 /* CSS information exclusive to the "Index" page */
 
+.nametag {
+    width:60%;
+    /*height:auto;*/
+}
+
 .portrait {
     border: 2px solid #aaaaaa;
-    border-radius: 5%;
     width: 15%;
     margin: 150px auto;
     text-align: center;
 }
 
-/* CSS information exclusive to the "About Me" page */
+.section {
+    width: 100%;
+}
+
+/* CSS information exclusive to the "About Me" section */
+
+#about {
+    scroll-margin-top: 6rem;
+    display: inline-block;
+    /*overflow: none;*/
+    /*
+    overflow-x: auto;
+    white-space: nowrap;
+    */
+    width: 100%;
+}
+
+/*
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    width: auto;
+    animation: scroll 10s linear infinite;
+    align-items: center;
+}
+*/
+  
+.info-card {
+    display: block;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+.info-card img {
+    opacity: 0.5;
+}
+
+.info-card img:hover {
+    box-shadow:
+        /* Purple */
+        0 0 7px #FFFFFF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+        0 0 40px #D875FF;
+    transition: all 0.5s ease-out;
+    opacity: 100;
+}
+  
+/*
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+*/
+
+.abt {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 36px;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff;
+}
+  
+.info {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff;
+}
+
+/* Depreciated */
+
+.about {
+    position: relative;
+}
 
 .web-dev {
     margin-top: 100px;
@@ -181,7 +428,7 @@ footer {
     margin: 30px;
 }
 
-/* CSS information exclusive to the "Contact Form" page */
+/* CSS information exclusive to the "Contact Form" page (DEPRECIATED)
 #contact-form {
     padding-top: 150px;
     text-align: center;
@@ -200,5 +447,277 @@ footer {
     color: #aaaaaa;
     background-color:rgba(100, 100, 100, 0.5);
     border-radius: 10px;
-    font-size: px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    transition: all 0.5s ease-in;
+}
+
+*/
+
+/* CSS information exclusive to the "Projects" setion */
+
+#projects {
+    scroll-margin-top: 6rem;
+}
+
+#projects .abt {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#projects .info {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.project-label {
+    text-align: center;
+    text-shadow:
+        /* White */
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+
+        /* Purple */
+        0 0 42px #D875FF,
+        0 0 82px #D875FF,
+        0 0 92px #D875FF,
+        0 0 102px #D875FF,
+        0 0 151px #D875FF;
+}
+
+.project-label h2 {
+    font-size: 60px;
+}
+
+.project-label h3 {
+    font-size: 30px;
+    padding:10px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px;
+    text-align: center;
+
+    /*Add to site in future update*/
+    /* animation: scroll 10s linear infinite; */
+}
+
+.project-container img {
+    display: block;
+    position: relative;
+    opacity: 50%;
+    height: auto;
+    transition: all 0.5s ease-in;
+    width:100%;
+    box-shadow:
+        0 0 7px #FFFFFF,
+        0 0 12px #FFFFFF;
+    border-radius: 5px;
+}
+
+.project-container::after {
+    content: "";
+    margin-right: -20px;
+}
+
+.project-container img:hover {
+    box-shadow:
+        /* Purple */
+        0 0 7px #FFFFFF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+        0 0 40px #D875FF;
+    transition: all 0.5s ease-out;
+    opacity: 100;
+}
+
+.project {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*
+.abt-project .info-project {
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+}
+*/
+
+.abt-project {
+    display: none;
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background: none; 
+    padding: 10px 20px; 
+    font-size: 36px; 
+    text-shadow:
+        /* White */
+        0 0 7px #ffffff,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF;
+}
+
+.info-project {
+    display: none;
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    top: 65%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background: none;
+    padding: 10px 20px; 
+    font-size: 20px; 
+    text-shadow:
+        /* White */
+        0 0 7px #ffffff,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF;
+    
+}
+
+.project:hover .info-project {
+    display: flex;
+}
+
+.project:hover .abt-project {
+    display: flex;
+}
+
+/* CSS information exclusive to the Contact Form */
+
+  /* The popup form - hidden by default */
+.pop-up {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    box-shadow:
+        /* Purple */
+        0 0 7px #FFFFFF,
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+        0 0 40px #D875FF;
+    z-index: 9;
+}
+
+.form-data {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.5s); 
+    transition: all 0.5s ease-out;
+}
+  
+  /* When the inputs get focus, do something */
+.form-data:focus {
+    background-color: rgba(255,255,255,0.75);;
+    outline: none;
+    transition: all 0.5s ease-in;
+}
+  
+  /* Set a style for the submit/login button */
+
+.form-container .submit .cancel {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form-container .submit {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    margin: 10px;
+    color: white;
+    padding: 10px 10px;
+    transition: all 0.5s ease-in;
+}
+
+.form-container .cancel {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    margin: 10px;
+    color: white;
+    padding: 10px 10px;
+    transition: all 0.5s ease-in;
+}
+
+
+.form-container .submit:hover {
+    height: 100%;
+    transition: all 0.5s ease-out;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow:
+        /* Light Green */
+        0 0 7px #3fff2d,
+        0 0 10px #3fff2d,
+        0 0 21px #3fff2d,
+
+        /* Dark Green */
+        0 0 42px #1ebe0f,
+        0 0 82px #1ebe0f,
+        0 0 92px #1ebe0f,
+        0 0 102px #1ebe0f,
+        0 0 151px #1ebe0f;
+}
+
+.form-container .cancel:hover {
+    height: 100%;
+    transition: all 0.5s ease-out;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow:
+        /* Light Red */
+        0 0 7px #ff1111,
+        0 0 10px #ff1111,
+        0 0 21px #ff1111,
+
+        /* Dark Red */
+        0 0 42px #d30101,
+        0 0 82px #d30101,
+        0 0 92px #d30101,
+        0 0 102px #d30101,
+        0 0 151px #d30101;
+}
+  
+  /* Add some hover effects to buttons */
+.form-container .submit:hover {
+    opacity: 1;
 }
