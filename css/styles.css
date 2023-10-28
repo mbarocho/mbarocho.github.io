@@ -296,8 +296,8 @@ footer {
 
 .portrait {
     border: 2px solid #aaaaaa;
-    width: 15%;
-    margin: 150px auto;
+    width: 25%;
+    height: auto;
     text-align: center;
 }
 
