@@ -33,15 +33,17 @@ footer {
     bottom: 0px;
 }
 
+/*
 .background {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    /*background-image: url("../images/slytherin.png");*/
-    background-color: black;
+    background-image: url("../images/Cyberpunk.jpg");
+    background-color: none;
     opacity: 75%;
 }
+*/
 
 .blur {
     backdrop-filter: blur(3px);
@@ -384,15 +386,17 @@ input:checked + .slider:before {
 .portrait img {
     width: 50%;
     border-radius: 50%;
+    border: 2px solid #fff;
+    filter: saturate(75%);
+    /*
     box-shadow:
-        /* White */
         0 0 7px #fff,
 
-        /* Purple */
         0 0 10px #D875FF,
         0 0 21px #D875FF,
         0 0 40px #D875FF,
         0 0 66px #D875FF;
+    */
 }
 
 .stats {
@@ -588,6 +592,20 @@ input:checked + .slider:before {
     margin: 10px 0;
 }
 
+#project-container {
+    width: 50%;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    margin-left: 25%;
+}
+
+#project-container::after {
+    content: "";
+    margin-right: -20px;
+}
+
 .project-label {
     text-align: center;
     text-shadow:
@@ -611,24 +629,6 @@ input:checked + .slider:before {
 .project-label h3 {
     font-size: 30px;
     padding: 10px;
-}
-
-#project-container {
-    overflow: hidden; /* Hide overflow to only show one project at a time */
-    width: 100%; /* Make sure the container takes the full width of its parent */
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
-    /*Add to site in future update*/
-    /* animation: scroll 10s linear infinite; */
-}
-
-#project-container::after {
-    content: "";
-    margin-right: -20px;
 }
 
 .project {

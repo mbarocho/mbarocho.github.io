@@ -111,14 +111,14 @@ window.onload = function() {
 // Code for "Projects" Carousel
 
 document.addEventListener("DOMContentLoaded", function () {
-    const projectContainer = document.querySelector(".project-container");
+    const projectSection = document.getElementById("project-container");
     const projects = document.querySelectorAll(".project");
     const projectWidth = projects[0].offsetWidth; // Assuming all project cards have the same width
     let currentIndex = 0;
 
     function updateCarousel() {
         const translateXValue = -currentIndex * projectWidth;
-        projectContainer.style.transform = `translateX(${translateXValue}px)`;
+        projectSection.style.transform = `translateX(${translateXValue}px)`;
     }
 
     function nextSlide() {
@@ -136,35 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    const projectSection = document.getElementById("projects");
-    const projects = document.querySelectorAll(".project");
-    let currentIndex = 0;
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % projects.length;
-        updateAbout();
-    }
-
-    function previousSlide() {
-        currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-        updateAbout();
-    }
-
-    function updateProjects() {
-        const translateXValue = -currentIndex * 100; // Adjust based on card width
-        projectSection.style.transform = `translateX(${translateXValue}%)`;
-    }
-
-    //setInterval(nextSlide, 2000);
-    document.getElementById("next").addEventListener("click", nextSlide);
-    document.getElementById("prev").addEventListener("click", previousSlide);
-
-});
-*/
 
 // Code for Light Mode Toggle
 
