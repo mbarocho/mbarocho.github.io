@@ -17,7 +17,7 @@
 		</script>
 	</head>
 
-	<body class="dark-mode">
+	<body>
 		<div id="loading">
 			<div class="loading-page">
 				<p class="loading-word">Accessing...</p>
@@ -27,36 +27,43 @@
 			
 		<!--Information for the Info Bar-->
 		<div class="top-bar">
-			<!--Michael Arocho, CISC474, Personal Web Page 1, mbarocho@udel.edu-->
 			<div class="nav-buttons">
 				<a href="#home" class="button">Home</a>
 				<a href="#about" class="button">About Me</a>
-				<a href="#projects" class="drop-menu button">Projects</a>
+				<a href="#projects" class="button">Projects</a>
 				<a href="files/Resume.pdf" class="button">Resume</a>
-				<button class="button" style="font-family: 'Courier New', Courier, monospace;" onclick="openForm()">Contact Me!</button>
-				<div class="dropdown">
-					<a class="drop-menu">Class Links</a>
-					<div class="class-info">
-						<a href="https://mattm401.github.io/" class="button">Class Website</a>
-						<a href="https://dhp2616.github.io/-/" class="button">Previous Student</a>
-						<a href="https://teric622.github.io/" class="button">Next Student</a>
-					</div>
-				</div>
-				
+				<a class="button" style="font-family: 'Courier New', Courier, monospace;" onclick="openForm()">Contact Me!</a>
+			</div>
+
+			<div class="light-toggle">
+				<label class="switch">
+					<input type="checkbox" onclick="lightMode()">
+					<span class="slider round"></span>
+				</label>
 			</div>
 		</div>
 
 
 		<div class="name" id="home">
 			<img src="images/nametag.png" alt="Michael Arocho" class="nametag">
-			<p>Amateur Software Developer. Professional Nerd.</p>
-		</div>
-
-		<div style="text-align: center;">
-			<img class = "portrait" src="images/Me.jpg" alt="Myself">
+			<p class="tagline">Part-Time Software Developer. Full-Time Nerd.</p>
 		</div>
 
 		<div id="about">
+			<div style="text-align: center;" class="stat-bar">
+				<div class="portrait" >
+					<img src="images/Me.jpg" alt="Myself">
+				</div>
+				<div class="stats">
+					<h3>Prior Experience:</h3>
+					<ul>
+						<li>IT Troubleshooting Technician</li>
+						<li>IT Site Assistant</li>
+						<li>Research Assistant</li>
+					</ul>
+				</div>
+			</div>
+
 			<div class="info-card">
 				<img src="images/NYC.jpg" alt="New York City">
 				<h1 class="abt">About Me</h1>
@@ -103,7 +110,8 @@
 		</div>
 
 		<h2 class="project-label" id="projects">My Projects</h2>
-		<div class="project-container">
+
+		<div id="project-container">
 			<div class="project">
 				<a href="files/cmd-center.zip">
 					<img class="thumbnail" src="images/twitch.png" alt="Background">
@@ -141,7 +149,7 @@
 			<div class="project">
 				<a href="https://kroth353.github.io/TermProjectCisc474/">
 					<img class="thumbnail" src="images/project.png" alt="Logo">
-					<h1 class="abt-project" style="color: black;">Memory Games</h1>
+					<h1 class="abt-project" style="color: black;">MindMatch</h1>
 					<p class="info-project" style="color: black; top: 50%;">
 						A group-based term project for my Advanced Web Technologies class.<br>
 						<br>
@@ -152,6 +160,8 @@
 				</a>
 			</div>
 		</div>
+		<button id="prev">Previous</button>
+		<button id="next">Next</button>
 
 		<div class="pop-up" id="contact">
 			<form id="contact-form" class="form-container">

@@ -88,15 +88,16 @@ footer {
 /* CSS information for toolbar */
 
 .top-bar {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     position: sticky;
-    justify-content: space-between;
     top: 0;
     left: 0;
     height: 90px;
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     z-index: 100;
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .75));
 }
@@ -106,7 +107,6 @@ footer {
     text-align: center;
     /*padding-top: 20px;*/
     /*float: left;*/
-    color: white;
     text-shadow:
         /* White */
         0 0 7px #fff,
@@ -130,7 +130,6 @@ footer {
     display: flex;
     padding-right: 25px;
     font-size: 20px;
-    color: white;
 }
 
 .button {
@@ -142,7 +141,7 @@ footer {
     cursor: pointer;
     background: none;
     margin: 10px;
-    color: white;
+    color: #FFFFFF;
     padding: 10px 10px;
     transition: all 0.5s ease-in;
 }
@@ -261,6 +260,76 @@ footer {
         0 0 21px #fff;
 }
 
+/* CSS information for "Light Mode" toggle */
+
+.light-toggle {
+    text-align: center;
+    padding-top: 0%;
+    padding-right: 25px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 51px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333333;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 39px;
+    width: 39px;
+    left: 6px;
+    bottom: 6px;
+    background-color: #FFFFFF;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #dddddd;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #dddddd;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+}
+
 /* CSS information for the Footer */
 
 .icon {
@@ -291,14 +360,58 @@ footer {
 
 .nametag {
     width:60%;
+    background: none;
     /*height:auto;*/
 }
 
-.portrait {
-    border: 2px solid #aaaaaa;
-    width: 25%;
-    height: auto;
+.stat-bar {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 150px;
     text-align: center;
+    margin: 50px auto;
+}
+
+.portrait {
+    position: absolute;
+    right: 85%;
+    top: -25%;
+    width: 25%;
+    z-index: 2;
+}
+
+.portrait img {
+    width: 50%;
+    border-radius: 50%;
+    box-shadow:
+        /* White */
+        0 0 7px #fff,
+
+        /* Purple */
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+        0 0 40px #D875FF,
+        0 0 66px #D875FF;
+}
+
+.stats {
+    width: 100%;
+    border-radius: 25px;
+    text-align: center;
+    height: auto;
+    position: relative;
+    z-index: 1; 
+    background-color: #000;
+    box-shadow:
+        /* White */
+        0 0 7px #fff,
+
+        /* Purple */
+        0 0 10px #D875FF,
+        0 0 21px #D875FF,
+        0 0 40px #D875FF,
+        0 0 66px #D875FF;
 }
 
 .section {
@@ -339,6 +452,7 @@ footer {
 
 .info-card img {
     opacity: 0.5;
+    border-radius: 10px;
 }
 
 .info-card img:hover {
@@ -496,40 +610,50 @@ footer {
 
 .project-label h3 {
     font-size: 30px;
-    padding:10px;
+    padding: 10px;
 }
 
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+#project-container {
+    overflow: hidden; /* Hide overflow to only show one project at a time */
+    width: 100%; /* Make sure the container takes the full width of its parent */
+    display: flex;
     gap: 20px;
     padding: 10px;
     text-align: center;
-
+    justify-content: center;
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
     /*Add to site in future update*/
     /* animation: scroll 10s linear infinite; */
 }
 
-.project-container img {
+#project-container::after {
+    content: "";
+    margin-right: -20px;
+}
+
+.project {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.project img {
     display: block;
     position: relative;
     opacity: 50%;
     height: auto;
     transition: all 0.5s ease-in;
-    width:100%;
+    width: 100%;
     box-shadow:
         0 0 7px #FFFFFF,
         0 0 12px #FFFFFF;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.project-container::after {
-    content: "";
-    margin-right: -20px;
-}
-
-.project-container img:hover {
+.project img:hover {
     box-shadow:
         /* Purple */
         0 0 7px #FFFFFF,
@@ -538,12 +662,6 @@ footer {
         0 0 40px #D875FF;
     transition: all 0.5s ease-out;
     opacity: 100;
-}
-
-.project {
-    position: relative;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 /*
@@ -657,7 +775,7 @@ footer {
     cursor: pointer;
     background: none;
     margin: 10px;
-    color: white;
+    color: #096d00;
     padding: 10px 10px;
     transition: all 0.5s ease-in;
 }
@@ -671,7 +789,7 @@ footer {
     cursor: pointer;
     background: none;
     margin: 10px;
-    color: white;
+    color: #6d0000;
     padding: 10px 10px;
     transition: all 0.5s ease-in;
 }
@@ -720,4 +838,68 @@ footer {
   /* Add some hover effects to buttons */
 .form-container .submit:hover {
     opacity: 1;
+}
+
+/* Light Mode */
+
+.light {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.light .tagline {
+    text-shadow: none;
+}
+
+.light .top-bar{
+    background-image: linear-gradient(rgba(245, 245, 245, 1), rgba(245, 245, 245, .5));
+}
+
+.light .button {
+    color: #000000;
+}
+
+.light .button:hover {
+    box-shadow: none;
+    background-color:rgba(0, 0, 0, 0);
+    text-decoration: underline;
+}
+
+.light .icons {
+    filter: invert(1);
+}
+
+.light .nametag {
+    filter: invert(1);
+    background-color:rgba(0, 0, 0, 0)
+}
+
+.light .pop-up {
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    box-shadow: none;
+    z-index: 9;
+}
+
+.light .form-data {
+    background-color: rgba(127,127,127,0.5);
+}
+
+.light .info-card img:hover {
+    box-shadow: none;
+    transition: all 0.5s ease-out;
+    opacity: 100;
+}
+
+.light .portrait img {
+    box-shadow:  2px 5px 5px #000;
+}
+
+.light .stats {
+    background-color: #fff;
+    box-shadow:  2px 5px 5px #000;
+}
+
+.light .thumbnail {
+    box-shadow:  2px 5px 5px #000;
 }
